@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DrawComponent } from './draw/draw.component';
 import { SelectionComponent } from './selection/selection.component';
@@ -12,4 +12,16 @@ import { SelectionComponent } from './selection/selection.component';
 })
 export class AppComponent {
   title = 'ascii-drawing';
+
+  selection: number;
+
+  constructor(){
+    this.selection = 0;
+  }
+
+  @Input()
+  onDrawSelection(drawSelectionEvent: any){
+    this.selection = drawSelectionEvent.drawingSelection;
+  }
+
 }

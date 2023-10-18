@@ -1,6 +1,9 @@
 <main>
   <div>
-    <mk-draw-selection></mk-draw-selection>
+    <mk-draw-selection (drawSelectionEvent)="onDrawSelection($event)"></mk-draw-selection>
   </div>
     <mk-draw-draw></mk-draw-draw>
+
+    {{ selection }}
+    
 </main>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
@@ -11,16 +11,19 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class SelectionComponent {
 
+  @Output()
+  drawSelectionEvent: EventEmitter<number> = new EventEmitter();
+
   selection = 0;
-  
+
 
   form = new FormGroup({
     drawingSelection: new FormControl(0),
   });
 
-  onSubmit(value: any){
+  onSubmit(value: any) {
     this.selection = value;
-    console.log(this.selection);
+    this.drawSelectionEvent.emit(this.selection);
   }
 
 }
