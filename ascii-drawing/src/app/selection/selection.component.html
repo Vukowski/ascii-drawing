@@ -1,0 +1,17 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <div class="form-check">
+    <input class="form-check-input" type="radio" formControlName="drawingSelection" id="beef" value="1" >
+    <label class="form-check-label" for="beef">Draw Nothing</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" formControlName="drawingSelection" id="lamb" value="2">
+    <label class="form-check-label" for="lamb">Draw a star</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" formControlName="drawingSelection" id="fish" value="3">
+    <label class="form-check-label" for="fish">Draw a smiley face</label>
+  </div>
+  <div class="form-check">
+    <button type="submit">Choose!</button>
+  </div>
+</form>
